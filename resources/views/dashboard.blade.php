@@ -10,7 +10,7 @@
     
 
     <div class="bg-white shadow-lg rounded-lg max-w-6xl w-full p-8">
-        <h1 class="text-4xl font-bold text-center text-gray-800 mb-10">Bienvenido al Sistema de Gestión de Libros</h1>
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-10">Proyecto 2 CRUD: Bienvenido al Sistema de Gestión de Libros</h1>
 
         <!-- Tabla de libros -->
         <div class="overflow-x-auto">
