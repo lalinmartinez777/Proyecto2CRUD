@@ -10,7 +10,7 @@
     <!-- Contenedor principal con Tailwind -->
     <div class="min-h-screen flex flex-col items-center justify-center">
         <div class="w-full max-w-6xl bg-white shadow-lg rounded-lg p-8">
-            <h1 class="text-4xl font-bold mb-6">Bienvenido al sistema de gestión de la librería</h1>
+            <h1 class="text-4xl font-bold mb-6">Bienvenido al sistema de gestión de libros de la librería</h1>
             <div class="mb-4">
                 <a href="{{ route('libros.gestion') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
                     Gestión de Libros
