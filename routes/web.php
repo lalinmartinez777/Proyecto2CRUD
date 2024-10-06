@@ -18,6 +18,8 @@ Route::get('/libros/gestion', [LibroController::class, 'gestion'])->name('libros
 Route::get('/libros/create', [LibroController::class, 'create'])->name('libros.create');
 Route::post('/libros', [LibroController::class, 'store'])->name('libros.store');
 Route::get('/libros/{id}', [LibroController::class, 'show'])->name('libros.show');
+Route::get('/libros/{id}/edit', [LibroController::class, 'edit'])->name('libros.edit');
+Route::put('/libros/{id}', [LibroController::class, 'update'])->name('libros.update');
 
 
 // Rutas protegidas para el perfil del usuario

@@ -65,18 +65,37 @@ class LibroController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
-    }
+    public function edit($id)
+{
+    // Obtener el libro por su ID
+    $libro = \App\Models\Libro::findOrFail($id);
+
+    // Enviar los datos del libro a la vista de edición
+    return view('libros.edit', compact('libro'));
+}
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+    public function update(Request $request, $id)
+{
+    // Validar los datos ingresados
+    $validated = $request->validate([
+        'nombre_libro' => 'required|string|max:255',
+        'nombre_autor' => 'required|string|max:255',
+        'anio' => 'required|integer|min:1000|max:' . date('Y'),
+        'copias_disponibles' => 'required|integer|min:0',
+        'paginas' => 'required|integer|min:1',
+        'disponible_envio' => 'required|boolean',
+    ]);
+
+    // Encontrar el libro y actualizarlo
+    $libro = \App\Models\Libro::findOrFail($id);
+    $libro->update($validated);
+
+    // Redirigir al dashboard con un mensaje de éxito
+    return redirect()->route('dashboard')->with('success', 'El libro fue actualizado exitosamente.');
+}
 
     /**
      * Remove the specified resource from storage.

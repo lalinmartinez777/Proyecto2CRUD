@@ -42,6 +42,8 @@
                             <td class="border border-gray-300 py-2 px-4">{{ $libro->disponible_envio ? 'Sí' : 'No' }}</td>
                             <td class="border border-gray-300 py-2 px-4">
                                 <a href="{{ route('libros.show', $libro->id) }}" class="text-blue-500 hover:underline">Ver Detalles</a>
+                                <a href="{{ route('libros.edit', $libro->id) }}" class="text-green-500 hover:underline">Editar</a>
+
                             </td>
                         </tr>
                     @endforeach
