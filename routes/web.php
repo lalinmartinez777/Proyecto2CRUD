@@ -17,6 +17,8 @@ Route::get('/libros/gestion', [LibroController::class, 'gestion'])->name('libros
 
 Route::get('/libros/create', [LibroController::class, 'create'])->name('libros.create');
 Route::post('/libros', [LibroController::class, 'store'])->name('libros.store');
+Route::get('/libros/{id}', [LibroController::class, 'show'])->name('libros.show');
+
 
 // Rutas protegidas para el perfil del usuario
 Route::middleware('auth')->group(function () {

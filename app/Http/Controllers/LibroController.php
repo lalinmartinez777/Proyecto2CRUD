@@ -53,10 +53,14 @@ class LibroController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
-    }
+    public function show($id)
+{
+    // Buscar el libro por su ID
+    $libro = \App\Models\Libro::findOrFail($id);
+
+    // Retornar la vista con los detalles del libro
+    return view('libros.show', compact('libro'));
+}
 
     /**
      * Show the form for editing the specified resource.
@@ -84,7 +88,11 @@ class LibroController extends Controller
 
     public function gestion()
 {
-    return view('libros.gestion');
+    // Obtener todos los libros de la base de datos
+    $libros = \App\Models\Libro::all();
+
+    // Enviar los libros a la vista
+    return view('libros.gestion', compact('libros'));
 }
 
 }
