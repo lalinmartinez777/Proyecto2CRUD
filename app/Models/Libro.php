@@ -13,7 +13,7 @@ class Libro extends Model
     protected $fillable = [
         'nombre_libro',
         'nombre_autor',
-        'ano',
+        'anio',
         'copias_disponibles',
         'paginas',
         'disponible_envio',

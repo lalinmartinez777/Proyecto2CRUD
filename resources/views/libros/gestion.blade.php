@@ -9,12 +9,18 @@
 <body class="bg-gray-100 text-gray-800">
     <div class="min-h-screen flex flex-col items-center justify-center">
         <div class="bg-white p-8 rounded shadow-lg">
-            <h1 class="text-3xl font-bold mb-4">Conexión exitosa</h1>
-            <p>Esta es la pantalla de gestión de libros.</p>
-            <a href="{{ route('dashboard') }}" class="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            <h1 class="text-3xl font-bold mb-4">Gestión de Libros</h1>
+
+            <!-- Botón para agregar un nuevo libro -->
+            <a href="{{ route('libros.create') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Agregar Libro
+            </a>
+
+            <a href="{{ route('dashboard') }}" class="inline-block mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
                 Volver al Dashboard
             </a>
         </div>
     </div>
 </body>
 </html>
+

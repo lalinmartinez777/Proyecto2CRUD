@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id(); // Clave primaria autoincremental
             $table->string('nombre_libro'); // Nombre del libro
             $table->string('nombre_autor'); // Nombre del autor
-            $table->year('ano'); // Año de publicación
+            $table->year('anio'); // Año de publicación
             $table->integer('copias_disponibles'); // Número de copias disponibles
             $table->integer('paginas'); // Número de páginas del libro
             $table->boolean('disponible_envio'); // Disponible para envío (0 o 1)

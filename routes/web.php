@@ -15,6 +15,9 @@ Route::get('/dashboard', [LibroController::class, 'index'])->middleware(['auth',
 // Ruta para la gestión de libros (por ahora con mensaje de confirmación)
 Route::get('/libros/gestion', [LibroController::class, 'gestion'])->name('libros.gestion');
 
+Route::get('/libros/create', [LibroController::class, 'create'])->name('libros.create');
+Route::post('/libros', [LibroController::class, 'store'])->name('libros.store');
+
 // Rutas protegidas para el perfil del usuario
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

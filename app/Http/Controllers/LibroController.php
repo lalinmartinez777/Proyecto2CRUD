@@ -24,17 +24,31 @@ class LibroController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        //
-    }
+{
+    return view('libros.create');
+}
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
-    }
+{
+    // Validación de los datos ingresados
+    $validated = $request->validate([
+        'nombre_libro' => 'required|string|max:255',
+        'nombre_autor' => 'required|string|max:255',
+        'anio' => 'required|integer|min:1000|max:' . date('Y'),
+        'copias_disponibles' => 'required|integer|min:0',
+        'paginas' => 'required|integer|min:1',
+        'disponible_envio' => 'required|boolean',
+    ]);
+
+    // Guardar el libro en la base de datos
+    \App\Models\Libro::create($validated);
+
+    // Redirigir al dashboard con un mensaje de éxito
+    return redirect()->route('dashboard')->with('success', 'El libro fue agregado exitosamente.');
+}
 
     /**
      * Display the specified resource.
