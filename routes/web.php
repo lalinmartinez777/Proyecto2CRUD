@@ -20,6 +20,8 @@ Route::post('/libros', [LibroController::class, 'store'])->name('libros.store');
 Route::get('/libros/{id}', [LibroController::class, 'show'])->name('libros.show');
 Route::get('/libros/{id}/edit', [LibroController::class, 'edit'])->name('libros.edit');
 Route::put('/libros/{id}', [LibroController::class, 'update'])->name('libros.update');
+Route::delete('/libros/{id}', [LibroController::class, 'destroy'])->name('libros.destroy');
+
 
 
 // Rutas protegidas para el perfil del usuario

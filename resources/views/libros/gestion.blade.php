@@ -43,6 +43,13 @@
                             <td class="border border-gray-300 py-2 px-4">
                                 <a href="{{ route('libros.show', $libro->id) }}" class="text-blue-500 hover:underline">Ver Detalles</a>
                                 <a href="{{ route('libros.edit', $libro->id) }}" class="text-green-500 hover:underline">Editar</a>
+                                <!-- Formulario para eliminar el libro -->
+    <form action="{{ route('libros.destroy', $libro->id) }}" method="POST" class="inline-block">
+        @csrf
+        @method('DELETE') <!-- Método DELETE para eliminar -->
+        <button type="submit" class="text-red-500 hover:underline" onclick="return confirm('¿Estás seguro de que deseas eliminar este libro?')">Eliminar</button>
+    </form>
+</td>
 
                             </td>
                         </tr>

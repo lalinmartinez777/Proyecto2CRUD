@@ -53,8 +53,8 @@
                 <div class="mb-4">
                     <label for="disponible_envio" class="block text-gray-700">Disponible para Envío:</label>
                     <select name="disponible_envio" class="w-full px-4 py-2 border rounded">
-                        <option value="1">Sí</option>
-                        <option value="0">No</option>
+                        <option value="1" {{ old('disponible_envio') == 1 ? 'selected' : '' }}>Sí</option>
+                        <option value="0" {{ old('disponible_envio') == 0 ? 'selected' : '' }}>No</option>
                     </select>
                 </div>
 
